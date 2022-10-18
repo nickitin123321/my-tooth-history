@@ -1,3 +1,4 @@
+import { MouseEventHandler, MouseEvent } from 'react';
 import './Tooth.css';
 
 export type ToothProps = {
@@ -6,9 +7,18 @@ export type ToothProps = {
   width: number,
   height: number,
   fill: string,
-  stroke: string };
+  stroke: string
+ setCoordinates: React.Dispatch<React.SetStateAction<{
+    top: string;
+    left: string;
+  }>>};
+
 
 const Tooth= (props: ToothProps) => {
-  return <rect className='tooth' {...props}></rect>
+  const handleOnClick: MouseEventHandler<SVGRectElement> = (e: MouseEvent) => {
+    props.setCoordinates({top: `${e.clientY}px`, left: `${e.clientX}px`});
+  }
+
+  return <rect className='tooth' onClick={handleOnClick} rx={3} ry={3} {...props}></rect>
 }
 export default Tooth

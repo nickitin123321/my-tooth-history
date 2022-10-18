@@ -1,3 +1,4 @@
+import React from 'react';
 import  Tooth from '../Tooth';
 import './Jaw.css'
 
@@ -9,7 +10,11 @@ const TOOTH_LENGTH = {
 
 
 
-const Jaw = () => {
+const Jaw = ({setCoordinates}:{setCoordinates: React.Dispatch<React.SetStateAction<{
+  top: string;
+  left: string;
+}>>
+}) => {
   const tooths: JSX.Element[]  = [];
 
   //TODO(dev) refactoring: add function.
@@ -22,7 +27,10 @@ const Jaw = () => {
                 width={10}
                 fill={'white'}
                 stroke={'black'}
-                key={i}/>);
+                key={i}
+                setCoordinates={setCoordinates}
+                />
+                );
   }
 
   // Lower jaw.
@@ -33,7 +41,9 @@ const Jaw = () => {
                 width={10}
                 fill={'white'}
                 stroke={'black'}
-                key={i + 100}/>);
+                key={i + 100}
+                setCoordinates={setCoordinates}
+                />);
   }
 
   return <g className='jaw'>
