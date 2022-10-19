@@ -1,13 +1,11 @@
 import './Container.css';
 import Jaw from '../Jaw';
 
-const Container = ({setCoordinates}:{setCoordinates: React.Dispatch<React.SetStateAction<{
-  top: string;
-  left: string;
-}>>
-}) => {
-  return <svg className='container' height={400} width={800} display={'block'}>
-    <Jaw setCoordinates={setCoordinates}/>
+const Container = () => {
+  return (
+    <svg className="container" height={400} width={236} display={'block'}>
+      <Jaw />
     </svg>
-}
-export default Container
+  );
+};
+export default Container;
