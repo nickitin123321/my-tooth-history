@@ -9,28 +9,25 @@ type Coordinates = {
 };
 export type SetCoordinates = React.Dispatch<React.SetStateAction<Coordinates>>;
 
+const INITIAL_STATE: Coordinates = {
+  top: '-99999px',
+  left: '-99999px',
+};
+
 function App() {
-  const initialState: Coordinates = {
-    top: '-9999px',
-    left: '-99999px',
-  };
+  const [{ top, left }, setCoordinates] = useState(INITIAL_STATE);
 
-  const [{ top, left }, setCoordinates] = useState(initialState);
-
-  const handleOnClick: MouseEventHandler<HTMLElement> = (e: MouseEvent) => {
+  const handleOnClick: MouseEventHandler<HTMLElement> = (e: MouseEvent<Element | SVGAElement>) => {
     const target = e.target as Element | SVGAElement;
-    const { className } = target;
-    const base = className.baseVal;
+    const { className: { baseVal }, className } = target;
 
-    console.log(className);
-
-    if (base === 'tooth') {
+    if (baseVal === 'tooth') {
       setCoordinates({
         top: `${e.clientY - 50}px`,
         left: `${e.clientX - 50}px`,
       });
     } else if (className === 'cross') {
-      setCoordinates(initialState);
+      setCoordinates(INITIAL_STATE);
     }
   };
 

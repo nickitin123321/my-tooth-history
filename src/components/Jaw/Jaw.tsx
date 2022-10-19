@@ -8,40 +8,31 @@ const TOOTH_LENGTH = {
   nonWisdom: 28,
 };
 
-const Jaw = () => {
-  const tooths: JSX.Element[] = [];
-
-  //TODO(dev) refactoring: add function
-
-  // Upper jaw.
+const fillTooths = (tooths: JSX.Element[], y0: number, y1: number, y2: number, x0: number,
+  {height, width, fill, stroke}: {height: number, width: number, fill: string, stroke: string}) => {
   for (let i = 0; i < TOOTH_LENGTH.adult / 2; i++) {
     tooths.push(
       <Tooth
-        x={0 + i * 15}
-        y={100 + (i === 0 || i === TOOTH_LENGTH.adult / 2 - 1 ? 20 : 10)}
-        height={20}
-        width={10}
-        fill={'white'}
-        stroke={'black'}
+        x={x0 + i * 15}
+        y={y0 + (i === 0 || i === TOOTH_LENGTH.adult / 2 - 1 ? y1 : y2)}
+        height={height}
+        width={width}
+        fill={fill}
+        stroke={stroke}
         key={i}
       />
     );
   }
+}
+
+const Jaw = () => {
+  const tooths: JSX.Element[] = [];
+
+  // Upper jaw.
+  fillTooths(tooths, 100, 20, 10, 4, {height: 20, width: 10, fill: 'white', stroke: 'black' });
 
   // Lower jaw.
-  for (let i = 0; i < TOOTH_LENGTH.adult / 2; i++) {
-    tooths.push(
-      <Tooth
-        x={0 + i * 15}
-        y={120 + (i === 0 || i === TOOTH_LENGTH.adult / 2 - 1 ? 40 : 50)}
-        height={20}
-        width={10}
-        fill={'white'}
-        stroke={'black'}
-        key={i + 100}
-      />
-    );
-  }
+  fillTooths(tooths, 120, 40, 50, 4, {height: 20, width: 10, fill: 'white', stroke: 'black' });
 
   return <g className="jaw">{tooths}</g>;
 };
