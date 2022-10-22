@@ -4,7 +4,7 @@
   position: absolute;
   border: 1px solid black;
   color: black;
-  width: 100px;
+  width: 200px;
   display: flex;
   flex-direction: column;
   border-radius: 10px;
@@ -13,18 +13,20 @@
 }
 
 .cross {
-  margin: 1px 4px 1px auto;
-  transform: scale(0.8);
+  margin: 2px 2px 2px auto;
+  height: 16px;
+  transform: scale(1.1);
   cursor: pointer;
-  border: 0;
+  border: none;
+  border-radius: 10px;
 }
 
 .content {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
   word-wrap: break-word;
+  padding: 0 0 0 17px;
 }
 
 .plus {

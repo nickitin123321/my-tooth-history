@@ -1,6 +1,8 @@
 import './Tooltip.css';
 import TooltipControls from './TooltipControls';
 import { useState, MouseEventHandler, MouseEvent } from 'react';
+import { BsFillXCircleFill } from 'react-icons/bs';
+import { BsXCircle } from 'react-icons/bs';
 
 const Tooltip = ({ top, left }: { top: string; left: string }) => {
   const [isInputVisible, setIsInputVisible] = useState(false);
@@ -15,7 +17,10 @@ const Tooltip = ({ top, left }: { top: string; left: string }) => {
 
   return (
     <div className="tooltip" style={{ top: top, left: left }}>
-      <button className="cross">&#10006;</button>
+      <div className="cross">
+        <BsXCircle className="cross" />
+      </div>
+
       <ul className="content">
         {items}
         {isInputVisible && <TooltipControls />}
