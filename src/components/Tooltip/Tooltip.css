@@ -4,7 +4,8 @@
   position: absolute;
   border: 1px solid black;
   color: black;
-  width: 200px;
+  width: 240px;
+  height: 200px;
   display: flex;
   flex-direction: column;
   border-radius: 10px;
@@ -15,7 +16,7 @@
 .cross {
   margin: 2px 2px 2px auto;
   height: 16px;
-  transform: scale(1.1);
+  pointer-events: visiblePainted;
   cursor: pointer;
   border: none;
   border-radius: 10px;
@@ -33,6 +34,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 16px;
+  padding-right: 2px;
   cursor: pointer;
   border: 0;
   background-color: white;

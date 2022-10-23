@@ -2,5 +2,16 @@
 }
 
 .input {
-  width: 70px;
+  width: 100px;
+  border: none;
+  border-bottom: 1px solid rgba(133, 133, 133, 0.5);
+}
+.btn {
+  border: none;
+  justify-content: center;
+  background-color: white;
+  box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.466);
+  background-color: rgba(255, 255, 255, 0.3);
+  padding: 2px 5px;
+  margin: 0 4px;
 }

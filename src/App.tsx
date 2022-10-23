@@ -18,23 +18,27 @@ const INITIAL_STATE: Coordinates = {
 function App() {
   const [{ top, left }, setCoordinates] = useState(INITIAL_STATE);
 
-  const handleOnClick: MouseEventHandler<HTMLElement> = (e: MouseEvent<Element | SVGAElement>) => {
+  const handleOnClick: MouseEventHandler<HTMLElement> = (
+    e: MouseEvent<Element | SVGAElement>
+  ) => {
     const target = e.target as Element | SVGAElement;
     const { className: { baseVal }, className } = target;
     console.log(target)
     if (baseVal === 'tooth') {
       setCoordinates({
-        top: `${e.clientY - 50}px`,
-        left: `${e.clientX - 100}px`,
+        top: `${120}px`,
+        left: `${39}px`,
       });
-    } else if (baseVal === 'cross' || className==='cross' || baseVal === '') { //такой бэйсвол у элементов из react-icons
+    } else if (baseVal === 'cross' || className === 'cross' || baseVal === '') {
+      //такой бэйсвол у элементов из react-icons
       setCoordinates(INITIAL_STATE);
     }
   };
 
+
   return (
     <div onClick={handleOnClick}>
-      <Head/>
+      <Head />
       <Tooltip top={top} left={left} />
       <Container />
     </div>

@@ -20,7 +20,7 @@ const Tooltip = ({ top, left }: { top: string; left: string }) => {
       <div className="cross">
         <BsXCircle className="cross" />
       </div>
-
+      
       <ul className="content">
         {items}
         {isInputVisible && <TooltipControls />}

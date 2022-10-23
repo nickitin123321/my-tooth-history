@@ -29,10 +29,10 @@ const Jaw = () => {
   const tooths: JSX.Element[] = [];
 
   // Upper jaw.
-  fillTooths(tooths, 100, 20, 10, 4, {height: 20, width: 10, fill: 'white', stroke: 'black' });
+  fillTooths(tooths, 370, 20, 10, 4, {height: 20, width: 10, fill: 'white', stroke: 'black' });
 
   // Lower jaw.
-  fillTooths(tooths, 120, 40, 50, 4, {height: 20, width: 10, fill: 'white', stroke: 'black' });
+  fillTooths(tooths, 400, 40, 50, 4, {height: 20, width: 10, fill: 'white', stroke: 'black' });
 
   return <g className="jaw">{tooths}</g>;
 };
