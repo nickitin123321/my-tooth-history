@@ -22,19 +22,17 @@ function App() {
     e: MouseEvent<Element | SVGAElement>
   ) => {
     const target = e.target as Element | SVGAElement;
-    const { className: { baseVal }, className } = target;
-    console.log(target)
+    const {className: { baseVal }, className} = target;
+    console.log(target);
     if (baseVal === 'tooth') {
       setCoordinates({
         top: `${120}px`,
         left: `${39}px`,
       });
-    } else if (baseVal === 'cross' || className === 'cross' || baseVal === '') {
-      //такой бэйсвол у элементов из react-icons
+    } else if (baseVal === 'close') {
       setCoordinates(INITIAL_STATE);
     }
   };
-
 
   return (
     <div onClick={handleOnClick}>
