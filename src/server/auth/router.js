@@ -1,4 +1,4 @@
-const Router = require('express').Router();
+const Router = require('express').Router;
 const router = new Router();
 const controller = require('./controller');
 //const {check} = require('express-validator');

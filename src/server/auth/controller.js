@@ -1,9 +1,9 @@
 const User = require('../models/User');
-const {hashSync} = require('bcryptjs');
+const {hashSync} = require('bcrypt');
 
 class Controller {
    async registration(req, res) {
-    try {
+    try{
       const {username, password} = req.body;
       const candidate = await User().findOne({username});
       if(candidate){
@@ -15,8 +15,8 @@ class Controller {
       user.save();
 
       return res.json({message: 'User successfully created'});
-    } catch(e){
-
+    } catch (e) {
+      console.error(e);
     }
    }
 
