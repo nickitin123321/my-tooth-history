@@ -6,22 +6,10 @@
   color: black;
   width: 240px;
   height: 200px;
-  display: flex;
-  flex-direction: column;
   border-radius: 10px;
-  background-color: rgba(255, 255, 255, 0.7);
+  background-color: rgba(255, 255, 255, 0.733);
   box-shadow: 0px 2px 10px 1px rgba(0, 0, 0, 0.466);
 }
-
-.cross {
-  margin: 2px 2px 2px auto;
-  height: 16px;
-  pointer-events: visiblePainted;
-  cursor: pointer;
-  border: none;
-  border-radius: 10px;
-}
-
 .content {
   display: flex;
   flex-direction: column;
@@ -29,17 +17,31 @@
   word-wrap: break-word;
   padding: 0 0 0 17px;
 }
-
+.close {
+  width: 46px;
+  height: 46px;
+}
+.btn-cross {
+  width: 46px;
+  height: 46px;
+  cursor: pointer;
+  border-radius: 100%;
+  box-shadow: 0px 1px 5px 1px rgba(145, 145, 145, 0.26);
+}
+.cross {
+  margin: 6px 6px 2px auto;
+  pointer-events: visiblePainted;
+}
 .plus {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 16px;
-  padding-right: 2px;
-  cursor: pointer;
-  border: 0;
-  background-color: white;
-  border-radius: 20px;
-  box-shadow: 0px 2px 10px 1px rgba(0, 0, 0, 0.466);
-  background-color: rgba(255, 255, 255, 0.3);
+  margin: auto auto 6px auto;
+}
+.cross:hover,
+.plus:hover {
+  transform: scale(1.05);
+}
+.cross:active,
+.plus:active {
+  background-color: rgba(185, 185, 185, 0.267);
+  transform: scale(0.95);
 }

@@ -1,8 +1,6 @@
 import './Tooltip.css';
 import TooltipControls from './TooltipControls';
 import { useState, MouseEventHandler, MouseEvent } from 'react';
-import { BsFillXCircleFill } from 'react-icons/bs';
-import { BsXCircle } from 'react-icons/bs';
 
 const Tooltip = ({ top, left }: { top: string; left: string }) => {
   const [isInputVisible, setIsInputVisible] = useState(false);
@@ -17,17 +15,55 @@ const Tooltip = ({ top, left }: { top: string; left: string }) => {
 
   return (
     <div className="tooltip" style={{ top: top, left: left }}>
-      <div className="cross">
-        <BsXCircle className="cross" />
+      <div className="cross btn-cross">
+        <svg className="close">
+          <line
+            className="close"
+            x1="12"
+            y1="12"
+            x2="34"
+            y2="34"
+            stroke="#000000"
+            stroke-width="2"
+            stroke-linecap="round"
+          />
+          <line
+            className="close"
+            x1="34"
+            y1="12"
+            x2="12"
+            y2="34"
+            stroke="#000000"
+            stroke-width="2"
+            stroke-linecap="round"
+          />
+        </svg>
       </div>
-      
+
       <ul className="content">
         {items}
         {isInputVisible && <TooltipControls />}
       </ul>
-      <button className="plus" onClick={handleOnClick}>
-        +
-      </button>
+      <svg className="plus btn-cross" onClick={handleOnClick}>
+        <line
+          x1="8"
+          y1="23"
+          x2="38"
+          y2="23"
+          stroke="#000000"
+          stroke-width="2"
+          stroke-linecap="round"
+        />
+        <line
+          x1="23"
+          y1="8"
+          x2="23"
+          y2="38"
+          stroke="#000000"
+          stroke-width="2"
+          stroke-linecap="round"
+        />
+      </svg>
     </div>
   );
 };
