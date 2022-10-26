@@ -12,7 +12,7 @@ class Controller {
 
       const hashPassword = hashSync(password, 7)
       const user = new User({username, password: hashPassword});
-      user.save();
+      await user.save();
 
       return res.json({message: 'User successfully created'});
     } catch (e) {
