@@ -22,5 +22,5 @@
   },
   "include": [
     "src"
-, "createComponent.js"  ]
+, "createComponent.js", "public/server"  ]
 }
