@@ -1,4 +1,4 @@
-class AuthController {
+class Controller {
    async registration() {
     try{
 
@@ -25,4 +25,4 @@ class AuthController {
 
 }
 
-module.exports = new AuthController();
+module.exports = new Controller();
