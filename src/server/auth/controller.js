@@ -1,22 +1,35 @@
+const User = require('../models/User');
+const {hashSync} = require('bcryptjs');
+
 class Controller {
-   async registration() {
-    try{
+   async registration(req, res) {
+    try {
+      const {username, password} = req.body;
+      const candidate = await User().findOne({username});
+      if(candidate){
+        return res.status(400).json({message: 'User with the same name already exists'});
+      }
+
+      const hashPassword = hashSync(password, 7)
+      const user = new User({username, password: hashPassword});
+      user.save();
+
+      return res.json({message: 'User successfully created'});
+    } catch(e){
+
+    }
+   }
+
+   async login(req, res) {
+    try {
 
     } catch(e){
 
     }
    }
 
-   async login() {
-    try{
-
-    } catch(e){
-
-    }
-   }
-
-   async getUsers(){
-    try{
+   async getUsers(req, res){
+    try {
 
     } catch(e){
 
