@@ -11,8 +11,8 @@ type Coordinates = {
 export type SetCoordinates = React.Dispatch<React.SetStateAction<Coordinates>>;
 
 const INITIAL_STATE: Coordinates = {
-  top: '-99999px',
-  left: '-99999px',
+  top: '120px',
+  left: '-260px',
 };
 
 function App() {

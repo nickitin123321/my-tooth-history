@@ -13,6 +13,7 @@ const Tooltip = ({ top, left }: { top: string; left: string }) => {
     setIsInputVisible((prev) => !prev);
   };
 
+  //need to make switching bitween tooltip and 'select tooth'
   return (
     <div className="tooltip" style={{ top: top, left: left }}>
       <div className="cross btn-cross">
