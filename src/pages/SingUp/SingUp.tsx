@@ -1,4 +1,5 @@
-import './SingUp.css'
+import './SingUp.css';
+
 
 const SingUp = () => {
   return <div className='singUp'></div>

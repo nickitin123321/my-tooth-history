@@ -28,7 +28,7 @@ const createFile  = (name, content) => {
 const createComponent = () => {
   const args = process.argv.splice(2);
   const [name, folder = 'components'] = args;
-  process.chdir(`./src/${folder}`);
+  process.chdir(folder ? `./src/${folder}`: './src/');
 
   if(!args.length || args.length > 2){
     throw new Error('Enter component name argument');

@@ -12,7 +12,7 @@ export type SetCoordinates = React.Dispatch<React.SetStateAction<Coordinates>>;
 
 const INITIAL_STATE: Coordinates = {
   top: '120px',
-  left: '-260px',
+  left: '-120%',
 };
 
 function App() {
@@ -27,7 +27,7 @@ function App() {
     if (baseVal === 'tooth') {
       setCoordinates({
         top: `${120}px`,
-        left: `${39}px`,
+        left: `${10}%`,
       });
     } else if (baseVal === 'close') {
       setCoordinates(INITIAL_STATE);
@@ -37,6 +37,7 @@ function App() {
   return (
     <div onClick={handleOnClick}>
       <Head />
+      {<div className={left === '-120%'? 'visible' : 'hidden'}>Write</div>}
       <Tooltip top={top} left={left} />
       <Container />
     </div>
