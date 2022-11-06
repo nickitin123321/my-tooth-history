@@ -1,6 +1,7 @@
 import './SingUp.css';
 import Head from '../../components/Head';
 
+
 import AuthForm from '../../components/AuthForm';
 
 const SingUp = () => {
