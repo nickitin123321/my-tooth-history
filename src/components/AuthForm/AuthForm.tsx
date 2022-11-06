@@ -4,7 +4,6 @@ import Button from '../Button';
 import { Link, useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 
-
 export type Profile = {
   email: string;
   lastName: string;
@@ -34,7 +33,6 @@ const AuthForm = () => {
     mode: 'onBlur',
   });
 
-
   const emailValidation = {
     required: 'Заполните поле',
     pattern: {
@@ -59,9 +57,13 @@ const AuthForm = () => {
 
   return (
     <form className="authForm" onSubmit={handleSubmit(onSubmit)}>
-      <Input placeholderText={'Email'} type={'text'} />
-      <Input placeholderText={'PASSWORD'} type={'password'} />
-      <Button />
+      <Input placeholderText={'Email'} type={'text'} id={'email'}/>
+      <Input placeholderText={'PASSWORD'} type={'password'} id={'password'}/>
+      <Input placeholderText={'REPEAT PASSWORD'} type={'password'} id={'repeat-password'}/>
+      <div className="control">
+        <Button btnClass={''} text={'Cancel'} />
+        <Button btnClass={'blue'} text={'OK'} />
+      </div>
     </form>
   );
 };

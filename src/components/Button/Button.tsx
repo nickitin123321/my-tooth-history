@@ -1,6 +1,10 @@
-import './Button.css'
+import './Button.css';
 
-const Button = () => {
-  return <button className='button'></button>
-}
-export default Button
+type ButtonProps = {
+  btnClass: string;
+  text: string;
+};
+const Button = ({ btnClass, text }: ButtonProps) => {
+  return <button className={`button ${btnClass}`}>{text}</button>;
+};
+export default Button;

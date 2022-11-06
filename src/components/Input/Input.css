@@ -13,6 +13,7 @@
   font-size: 22px;
   font-family: inherit;
   font-weight: inherit;
+  text-align: center;
 }
 .input:focus {
   outline: none;
