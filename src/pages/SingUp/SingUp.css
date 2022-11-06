@@ -1,2 +1,4 @@
 .singUp {
+  display: flex;
+  height: calc(100% - var(--head-height));
 }

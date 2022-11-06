@@ -1,5 +1,5 @@
 .head {
   width: 100%;
-  height: 100px;
+  height: var(--head-height);
   background-color: rgb(255, 100, 80);
 }
