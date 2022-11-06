@@ -1,4 +1,8 @@
 .singUp {
   display: flex;
+  flex-direction: column;
+  justify-content: center;
   height: calc(100% - var(--head-height));
+  margin: auto;
+  width: 60%;
 }

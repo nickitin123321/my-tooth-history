@@ -1,6 +1,12 @@
 import './Input.css';
 
-const Input = () => {
-  return <input className="input" type={'text'} placeholder={'Email'}></input>;
+type InputProps = {
+  placeholderText: string;
+  type: 'text' | 'password' | 'id';
+};
+const Input = ({ placeholderText, type }: InputProps) => {
+  return (
+    <input className="input" type={type} placeholder={placeholderText}></input>
+  );
 };
 export default Input;

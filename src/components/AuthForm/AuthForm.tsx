@@ -1,11 +1,14 @@
 import './AuthForm.css';
 import Input from '../Input';
+import Button from '../Button';
 
 const AuthForm = () => {
   return (
-    <div className="authForm">
-      <Input />
-    </div>
+    <form className="authForm">
+      <Input placeholderText={'Email'} type={'text'} />
+      <Input placeholderText={'PASSWORD'} type={'password'} />
+      <Button />
+    </form>
   );
 };
 export default AuthForm;
