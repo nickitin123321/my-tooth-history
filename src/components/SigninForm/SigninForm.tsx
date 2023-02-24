@@ -11,6 +11,13 @@ type UserData = {
   password: string;
 }
 
+const usernameValidation = {
+  required: 'Заполните поле',
+};
+const passwordValidation = {
+  required: 'Заполните поле',
+};
+
 const SignInForm = () => {
   const { handleAuthenticated } = useContext(SignInContext);
   const navigate = useNavigate();
@@ -56,14 +63,14 @@ const SignInForm = () => {
         type={'text'}
         id={'username'}
         errorMessage={errors.username?.message}
-        register={register('username')}
+        register={register('username', usernameValidation)}
       />
 
       <Input placeholderText={'PASSWORD'}
         type={'password'}
         id={'password'}
         errorMessage={errors.password?.message}
-        register={register('password')}
+        register={register('password', passwordValidation)}
       />
 
       <div className="control">
