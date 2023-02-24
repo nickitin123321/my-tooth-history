@@ -1,18 +1,24 @@
 import express from 'express';
 import mongoose from 'mongoose';
+import cors from 'cors';
 import authRouter from './auth/router';
 
 const app = express();
 const port = process.env.PORT ?? 2000;
 
 app.use(express.json());
+app.use(
+  cors({
+    credentials: true,
+    origin: 'http://localhost:3000',
+  }),
+);
 app.use('/auth', authRouter);
-
 
 async function start(){
   try {
     await mongoose.connect('mongodb://localhost:27017/mytoothhistory');
-    app.listen(port,() => {
+    app.listen(port, () => {
       console.log(`App listening on port ${port}`);
     });
   } catch(e) {

@@ -8,5 +8,5 @@ const User = new mongoose_1.Schema({
     email: { type: String, unique: true, require: true },
     tooths: { ref: 'Tooth', type: String },
 });
-exports.default = (0, mongoose_1.model)('Address', User);
+exports.default = (0, mongoose_1.model)('User', User);
 //# sourceMappingURL=User.js.map

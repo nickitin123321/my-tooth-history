@@ -1,2 +1,5 @@
 .singIn {
+  display: flex;
+  justify-content: center;
+  font-size: 100px;
 }

@@ -1,7 +1,7 @@
 import './Button.css';
 
 type ButtonProps = {
-  btnClass: string;
+  btnClass?: string;
   text: string;
 };
 const Button = ({ btnClass, text }: ButtonProps) => {

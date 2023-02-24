@@ -15,10 +15,11 @@ class Controller {
         try {
             const { username, password, email } = req.body;
             const candidate = await User_1.default.findOne({ username });
-            if (candidate) {
+            const emailCandidate = await User_1.default.findOne({ email });
+            if (candidate || emailCandidate) {
                 return res
                     .status(400)
-                    .json({ message: 'User with the same name already exists' });
+                    .json({ message: 'User with the same name or email already exists' });
             }
             const passwordHash = bcrypt_1.default.hashSync(password, 7);
             const user = new User_1.default({ username, passwordHash, email });

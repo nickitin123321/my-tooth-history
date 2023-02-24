@@ -24,10 +24,12 @@ class Controller {
     try {
       const { username, password, email } = req.body;
       const candidate = await User.findOne({ username });
-      if (candidate) {
+      const emailCandidate = await User.findOne({ email });
+
+      if (candidate || emailCandidate) {
         return res
           .status(400)
-          .json({ message: 'User with the same name already exists' });
+          .json({ message: 'User with the same name or email already exists' });
       }
 
       const passwordHash = bcrypt.hashSync(password, 7);
@@ -69,7 +71,6 @@ class Controller {
   async getUsers(_: Request, res: Response) {
     try {
       const users = await User.find();
-
       res.json(users);
     } catch (error) {
       console.log(error);
