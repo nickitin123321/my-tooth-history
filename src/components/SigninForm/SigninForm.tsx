@@ -5,7 +5,7 @@ import Button from '../Button';
 const SigninForm = () => {
   return (
     <form className="signinForm">
-      <Input placeholderText={'Email'} type={'text'} id={'email'} />
+      <Input placeholderText={'Username'} type={'text'} id={'username'} />
       <Input placeholderText={'PASSWORD'} type={'password'} id={'password'} />
       <div className="control">
         <Button btnClass={''} text={'Cancel'} />

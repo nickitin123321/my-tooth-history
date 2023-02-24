@@ -6,7 +6,7 @@ type InputProps = {
   placeholderText: string;
   type: 'text' | 'password';
   id: string;
-  register: UseFormRegisterReturn;
+  register?: UseFormRegisterReturn;
   errorMessage?: string,
 };
 const Input = ({ placeholderText, type, id, register, errorMessage }: InputProps) => {
