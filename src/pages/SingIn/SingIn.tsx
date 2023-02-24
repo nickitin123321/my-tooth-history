@@ -1,5 +1,5 @@
 import Head from '../../components/Head';
-import SigninForm from '../../components/SigninForm';
+import SignInForm from '../../components/SigninForm';
 import './SingIn.css';
 
 const SingIn = () => {
@@ -7,7 +7,7 @@ const SingIn = () => {
     <>
       <Head />
       <div className="singIn sing-box">
-        <SigninForm />
+        <SignInForm />
       </div>
     </>
   );

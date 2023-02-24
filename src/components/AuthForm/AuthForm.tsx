@@ -1,8 +1,8 @@
 import './AuthForm.css';
 import Input from '../Input';
 import Button from '../Button';
-import { Link, useNavigate } from 'react-router-dom';
-import { useForm, } from 'react-hook-form';
+import {  useNavigate } from 'react-router-dom';
+import { useForm } from 'react-hook-form';
 
 export type Profile = {
   email: string;
