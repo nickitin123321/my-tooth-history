@@ -1,10 +1,10 @@
 import './SigninForm.css';
 import Input from '../Input';
 import Button from '../Button';
-import { useContext } from 'react';
+import { useContext, MouseEvent } from 'react';
 import SignInContext from '../../AuthContext'
 import { useForm } from 'react-hook-form';
-import {  useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 type UserData = {
   username: string;
@@ -18,6 +18,7 @@ const passwordValidation = {
   required: 'Заполните поле',
 };
 
+
 const SignInForm = () => {
   const { handleAuthenticated } = useContext(SignInContext);
   const navigate = useNavigate();
@@ -30,6 +31,11 @@ const SignInForm = () => {
     mode: 'onBlur',
   });
 
+
+  const handleOnClick = (e: MouseEvent<HTMLElement>) => {
+    e.preventDefault()
+    navigate('/signup')
+  }
 
   const onSubmit = async (data: UserData) => {
     const response = await fetch('http://localhost:2000/auth/login', {
@@ -74,7 +80,7 @@ const SignInForm = () => {
       />
 
       <div className="control">
-        <Button btnClass={''} text={'Cancel'} />
+        <Button btnClass={''} text={'Sign Up'} onClick={handleOnClick} />
         <Button btnClass={'blue'} text={'OK'} />
       </div>
     </form>

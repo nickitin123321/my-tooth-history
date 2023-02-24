@@ -1,8 +1,9 @@
 import './AuthForm.css';
 import Input from '../Input';
 import Button from '../Button';
-import {  useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
+import { MouseEvent } from 'react';
 
 export type Profile = {
   email: string;
@@ -66,6 +67,11 @@ const AuthForm = () => {
     }
   }
 
+  const handleOnClick = (e: MouseEvent<HTMLElement>) => {
+    e.preventDefault()
+    navigate('/signin')
+  }
+
   return (
     <form className="authForm" onSubmit={handleSubmit(onSubmit)}>
       <Input placeholderText={'Username'} type={'text'} id={'username'} register={register('username', usernameValidation)} errorMessage={errors.username?.message}/>
@@ -73,7 +79,7 @@ const AuthForm = () => {
       <Input placeholderText={'PASSWORD'} type={'password'} id={'password'}  register={register('password', passwordValidation)} errorMessage={errors.password?.message}/>
       <Input placeholderText={'REPEAT PASSWORD'} type={'password'} id={'confirmPassword'} register={register('confirmPassword', confirmPasswordValidation)} errorMessage={errors.confirmPassword?.message}/>
       <div className="control">
-        <Button btnClass={''} text={'Cancel'} />
+        <Button btnClass={''} text={'Sign In'} onClick={handleOnClick} />
         <Button btnClass={'blue'} text={'OK'} />
       </div>
     </form>
