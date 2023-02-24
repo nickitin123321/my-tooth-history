@@ -5,7 +5,7 @@ import SignIn from '../pages/SingIn';
 import SignUp from '../pages/SingUp';
 import Home from '../pages/Home';
 
-import SignInContext  from '../AuthContext/AuthContext';
+import SignInContext from '../AuthContext/AuthContext';
 
 export default function Router(): JSX.Element {
   const { isAuthenticated } = useContext(SignInContext);
@@ -21,10 +21,10 @@ export default function Router(): JSX.Element {
 
   return (
     <BrowserRouter>
-    <Routes>
-      <Route path="/signin" element={<SignIn/>} />
-      <Route path="/signup" element={<SignUp/>} />
-    </Routes>
+      <Routes>
+        <Route path="/signin" element={<SignIn />} />
+        <Route path="/signup" element={<SignUp />} />
+      </Routes>
     </BrowserRouter>
   );
 }
