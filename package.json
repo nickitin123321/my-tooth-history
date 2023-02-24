@@ -29,9 +29,7 @@
   "scripts": {
     "start": "react-scripts start",
     "start:server": "cd src/server && tsc && nodemon dist/index",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "init-db": "docker-compose up --build -d mongodb"
   },
   "eslintConfig": {
     "extends": [
